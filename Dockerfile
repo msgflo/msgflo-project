@@ -21,6 +21,6 @@ RUN apt-get update && apt-get install -y \
 RUN pip install -r requirements.txt
 
 # Map the volumes
-VOLUME /var/app/graphs /var/app/components /var/app/tests
+VOLUME /var/app/graphs /var/app/components
 
 CMD npm start
