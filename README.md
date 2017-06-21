@@ -1,4 +1,5 @@
 msgflo-project [![Greenkeeper badge](https://badges.greenkeeper.io/msgflo/msgflo-project.svg)](https://greenkeeper.io/) [![Build Status](https://travis-ci.org/msgflo/msgflo-project.svg?branch=master)](https://travis-ci.org/msgflo/msgflo-project)
+==============
 
 This repository provides a template for creating and running new [MsgFlo](https://msgflo.org) projects.
 
