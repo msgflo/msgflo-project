@@ -14,7 +14,7 @@ This repository provides a template for creating and running new [MsgFlo](https:
 
 * Fork this repository and name it to whatever suits your purpose
 * Update the project name and repository details accordingly in `package.json`
-* If you need additional libraries, add them to `package.json` (for Node.js) or `requirements.txt` (for Python
+* If you need additional libraries, add them to `package.json` (for Node.js) or `requirements.txt` (for Python)
 
 You can use this template for development both with a direct installation or with Docker.
 
