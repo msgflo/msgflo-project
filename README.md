@@ -42,6 +42,8 @@ Once you've installed and started the service either locally or with Docker, ope
 
 You should see an empty graph. Click _Edit as project_ to start hacking!
 
+Use Flowhub's [GitHub synchronization](https://docs.flowhub.io/github-integration/) feature to push your graph and component changes to your repository.
+
 ## Test automation
 
 * Enable your local fork in [Travis CI](https://travis-ci.org/)
