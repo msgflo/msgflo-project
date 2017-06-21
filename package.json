@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/msgflo/msgflo-project#readme",
   "dependencies": {
+    "mqtt": "^2.9.0",
     "msgflo": "^0.10.25",
     "msgflo-nodejs": "^0.10.5"
   },
