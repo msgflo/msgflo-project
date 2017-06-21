@@ -5,10 +5,12 @@ services:
     container_name: mosquitto
     ports:
       - 1883:1883
-    entrypoint: /usr/local/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
+    entrypoint: /usr/local/sbin/mosquitto
   msgflo:
     build: .
     environment:
       MSGFLO_BROKER: 'mqtt://localhost:1883'
+    ports:
+      - 3569:3569
     links:
       - mqtt
