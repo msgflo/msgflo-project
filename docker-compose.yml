@@ -8,8 +8,9 @@ services:
     entrypoint: /usr/local/sbin/mosquitto
   msgflo:
     build: .
+    container_name: msgflo-project
     environment:
-      MSGFLO_BROKER: 'mqtt://localhost:1883'
+      MSGFLO_BROKER: 'mqtt://mqtt:1883'
     ports:
       - 3569:3569
     links:
