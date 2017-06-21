@@ -1,0 +1,29 @@
+{
+  "name": "msgflo-project",
+  "version": "1.0.0",
+  "description": "Project template for MsgFlo",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha  --reporter spec spec/*.js",
+    "start": "./node_modules/.bin/msgflo --graph graphs/main.json --auto-save=true --runtime-id=e9c9fca9-c378-437b-98e4-97b556edbec1 --ping-interval=600 --componentdir components"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/msgflo/msgflo-project.git"
+  },
+  "author": "Henri Bergius <henri.bergius@iki.fi>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msgflo/msgflo-project/issues"
+  },
+  "homepage": "https://github.com/msgflo/msgflo-project#readme",
+  "dependencies": {
+    "msgflo": "^0.10.25",
+    "msgflo-nodejs": "^0.10.5"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "fbp-spec": "^0.2.1",
+    "mocha": "^3.4.2"
+  }
+}

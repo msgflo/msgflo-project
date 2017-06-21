@@ -1,0 +1,12 @@
+{
+  "properties": {
+    "name": "main",
+    "environment": {
+      "type": "msgflo"
+    }
+  },
+  "processes": {},
+  "connections": [],
+  "inports": [],
+  "outports": []
+}

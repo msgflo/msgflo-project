@@ -1,0 +1,11 @@
+language: node_js
+dist: trusty
+sudo: true
+node_js:
+- '6'
+services:
+- docker
+before_script:
+- docker -v
+- docker-compose -v
+- docker-compose up
