@@ -39,3 +39,9 @@ Once you've installed and started the service either locally or with Docker, ope
 <http://app.flowhub.io#runtime/endpoint?protocol%3Dwebsocket%26address%3Dws%3A%2F%2Flocalhost%3A3569>
 
 You should see an empty graph. Click _Edit as project_ to start hacking!
+
+## Test automation
+
+* Enable your local fork in [Travis CI](https://travis-ci.org/)
+* Tests are written in [fbp-spec format](https://github.com/flowbased/fbp-spec) and located in `spec/` folder
+* You can run tests locally with `npm test` (note: you'll have to do `npm install` for this even when running with Docker)
