@@ -5,6 +5,9 @@ node_js:
 - '6'
 services:
 - docker
+before_install:
+- cp examples/components/* components/
+- cp examples/spec/* spec/
 before_script:
 - docker -v
 - docker-compose -v
