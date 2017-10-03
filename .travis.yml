@@ -8,10 +8,10 @@ services:
 before_install:
 - cp examples/components/* components/
 - cp examples/spec/* spec/
+- if [ "$TARGET" == "raspberrypi3" ]; then docker run --rm --privileged multiarch/qemu-user-static:register --reset; fi
 before_script:
 - docker -v
 - docker-compose -v
-- if [ "$TARGET" == "raspberrypi3" ]; then docker run --rm --privileged multiarch/qemu-user-static:register --reset; fi
 - docker-compose up -d
 matrix:
   include:
