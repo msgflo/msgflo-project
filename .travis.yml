@@ -11,4 +11,9 @@ before_install:
 before_script:
 - docker -v
 - docker-compose -v
+- if [ "$TARGET" == "raspberrypi3" ]; then docker run --rm --privileged multiarch/qemu-user-static:register --reset; fi
 - docker-compose up -d
+matrix:
+  include:
+  - env: TARGET=x86 DOCKER_IMAGE=msgflo/msgflo-project DOCKER_FILE=Dockerfile
+  - env: TARGET=raspberrypi3 DOCKER_IMAGE=msgflo/raspberrypi3-msgflo-project COMPOSE_FILE=docker-compose-raspberrypi3.yml DOCKER_FILE=Dockerfile-raspberrypi3
