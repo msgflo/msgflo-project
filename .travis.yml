@@ -15,8 +15,14 @@ before_script:
 - docker-compose up -d
 - docker-compose ps
 - until ./node_modules/.bin/fbp-protocol-healthcheck ws://127.0.0.1:3569 || (( count++ >= 10 )); do echo "Waiting for runtime to be ready"; sleep 10; done
+after_success:
+- if [ "$TRAVIS_BRANCH" == "master" ]; then docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"; docker push "$DOCKER_IMAGE"; fi
 matrix:
   include:
   - env: TARGET=x86 DOCKER_IMAGE=msgflo/msgflo-project DOCKER_FILE=Dockerfile
   - env: TARGET=raspberrypi3 DOCKER_IMAGE=msgflo/raspberrypi3-msgflo-project COMPOSE_FILE=docker-compose-raspberrypi3.yml DOCKER_FILE=Dockerfile-raspberrypi3
     sudo: true
+env:
+  global:
+  - secure: miJtGDRtmBlS6QEaV/mjG2idVZpEyvLbm9mHYwWRZ8vo9T7PL8/GMCGRFvn0/atUL2fIMlVAl2LbB0Eiz1kO2X+dDs+a8aJKjDNUhn/Rh07e21Yn4XBnxMsxBORPWh5A3p4Rmu2XpMK3K4WH6LSbcuSNnn0AhDta+5IoEaWZV3dNFfoDAUcCT6Gxf/hoC9uW4Ia4yqPCRYcfOgPo9UHNCP+CVb7W93vyeyxUXpXs5+9fNYqSw5KThpA0ZdK59Irj7NOzHwDVZt48/2I+gTQoSvR7sZKiv+WC5joRrDPtEc7BErMm7dV/cfu2GHeyliN0qAfJM396m3ohDURIE1owpPiGVqo8EzJ15i+xD44e6agBAx87Qp5lcHeWNC++naF01xIMnr6BHeI3vMuw9qmFSJ/cf6rk6fUQvA/y1t/0lPMVmOj1aleuRihvVS+tRg3Lq9mbQ0hZlDjgxab/1YFo7EThiFIsFBFTK/FH8tqnAerJzI5cthNU9JSTi/mLBRVdsUgNb6st/8sJeuBcn9qnDly58BEU0U4bamvngGQXjFPaOhNGTfAFUBegGJsEbHVLjILx9HnEs/EHbO1r0I36P36jx83lLMF9dgfR0yxnKMUtNvKqwVHoolNHOGbT51fpSk/5XwsmI08Xk2fW+O2vMsxCkvMlzy0fU9RlB8LqDjc=
+  - secure: ZJvvg/uDh8Ubx+EpUoEqLErXgJQhrHlf2MhAaUhosbzM3o3cuHVDawGjKIgrHuBvgF4dR2t+6p3PknJ1CT0NsYVTfbK8KlGPSMlG4OBysnpHdB36a6/M/fXukaXTVXOxfKnD+fSRvqZkPiyfH52m5XBwhyK7yHw8TSPw0VRrK83fJ7+dazxtlt2RL/qTKGeTRlacCy9NBveNMDEEm/5k82V9ZbVnxEno+K3k3oqTmauiK5Syun+YLwmsWgzdl1AW4tlmmqkWTK28u1GXr7wlJxchTV07LXxIC6Adq/2IXJr5XHY5bYlPnePnQoTqHmtUDGWNdTnALwewH7LuioYBDO7S/kb7v7Ld8gkBzBOpSqPJwz7gTj/0jlVRYJAAJPX2ybNhk6YuyYKFJJyiRy3Gf2ZPTSZz1WVsvyQQTSyJafCiaL8367kI5FVcRw5qVVjFtBOKFmESrT+mD6HHyVWj+92+OdZed7didoXN4m3VNF3qArlCTI2nd857pkKnqofuBU2J7C0jWz0fhnHOusRZwh8KiFP36SSzeG++udRtl6F4EY/oWJGHX2MTff2ONLe7PLv9oSL5a0QLhCvKz8+rDMUsOBtzp/CR2D7+84gpEklqMuRlqHWU+aYyUvjPY9Q5XzNbweJBm9sbG7yPUIvwtIsmqUEXDK8aDG7tuCB+aTQ=
