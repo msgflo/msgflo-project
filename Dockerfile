@@ -5,6 +5,8 @@ EXPOSE 3569
 
 # Reduce npm install verbosity, overflows Travis CI log view
 ENV NPM_CONFIG_LOGLEVEL warn
+# Only install production dependencies
+ENV NODE_ENV production
 
 RUN mkdir -p /var/app
 WORKDIR /var/app
