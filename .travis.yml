@@ -13,6 +13,7 @@ before_script:
 - docker -v
 - docker-compose -v
 - docker-compose up -d
+- docker-compose ps
 - until ./node_modules/.bin/fbp-protocol-healthcheck ws://127.0.0.1:3569 || (( count++ >= 10 )); do echo "Waiting for runtime to be ready"; sleep 10; done
 matrix:
   include:
