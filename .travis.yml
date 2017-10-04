@@ -12,10 +12,7 @@ before_install:
 before_script:
 - docker -v
 - docker-compose -v
-- docker-compose pull
-- docker-compose build
-- docker-compose start
-- docker-compose ps
+- docker-compose up -d
 - until ./node_modules/.bin/fbp-protocol-healthcheck ws://127.0.0.1:3569 || (( count++ >= 10 )); do echo "Waiting for runtime to be ready"; sleep 10; done
 matrix:
   include:
