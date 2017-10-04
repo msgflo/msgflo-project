@@ -1,4 +1,4 @@
-msgflo-project [![Greenkeeper badge](https://badges.greenkeeper.io/msgflo/msgflo-project.svg)](https://greenkeeper.io/) [![Build Status](https://travis-ci.org/msgflo/msgflo-project.svg?branch=master)](https://travis-ci.org/msgflo/msgflo-project)
+msgflo-project [![Greenkeeper badge](https://badges.greenkeeper.io/msgflo/msgflo-project.svg)](https://greenkeeper.io/) [![Build Status](https://travis-ci.org/msgflo/msgflo-project.svg?branch=master)](https://travis-ci.org/msgflo/msgflo-project) [![Docker Hub x86](https://img.shields.io/docker/pulls/msgflo/msgflo-project.svg)](https://hub.docker.com/r/msgflo/msgflo-project/) [![Docker Hub Raspberry Pi3](https://img.shields.io/docker/pulls/msgflo/raspberrypi3-msgflo-project.svg)](https://hub.docker.com/r/msgflo/msgflo-project/)
 ==============
 
 This repository provides a template for creating and running new [MsgFlo](https://msgflo.org) projects.
@@ -28,7 +28,7 @@ You can use this template for development both with a direct installation or wit
 ### Running with Docker
 
 * Ensure you have a running Docker daemon
-* Start the project with `docker-compose up`
+* Start the project with `docker-compose up` (use `docker-compose-raspberrypi3.yml` file if you want to run on RPi3)
 
 Note: by default the MsgFlo coordinator and MQTT ports are only available on `localhost`. Edit the ports declarations in `docker-compose.yml` if you want to open them to the outside.
 

@@ -1,13 +1,15 @@
 version: '2'
 services:
   mqtt:
-    image: ansi/mosquitto
+    image: ansi/raspberrypi3-mosquitto
     container_name: msgflo-project-mosquitto
     ports:
       - '127.0.0.1:1883:1883'
     entrypoint: /usr/local/sbin/mosquitto
   msgflo:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-raspberrypi3
     container_name: msgflo-project
     environment:
       MSGFLO_BROKER: 'mqtt://mqtt:1883'
