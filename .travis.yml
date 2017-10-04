@@ -16,6 +16,7 @@ before_script:
 - docker-compose build
 - docker-compose start
 - docker-compose ps
+- until ./node_modules/.bin/fbp-protocol-healthcheck ws://127.0.0.1:3569 || (( count++ >= 10 )); do echo "Waiting for runtime to be ready"; sleep 10; done
 matrix:
   include:
   - env: TARGET=x86 DOCKER_IMAGE=msgflo/msgflo-project DOCKER_FILE=Dockerfile
