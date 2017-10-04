@@ -28,7 +28,7 @@ You can use this template for development both with a direct installation or wit
 ### Running with Docker
 
 * Ensure you have a running Docker daemon
-* Start the project with `docker-compose up`
+* Start the project with `docker-compose up` (use `docker-compose-raspberrypi3.yml` file if you want to run on RPi3)
 
 Note: by default the MsgFlo coordinator and MQTT ports are only available on `localhost`. Edit the ports declarations in `docker-compose.yml` if you want to open them to the outside.
 
