@@ -12,7 +12,10 @@ before_install:
 before_script:
 - docker -v
 - docker-compose -v
-- docker-compose up -d
+- docker-compose pull
+- docker-compose build
+- docker-compose start
+- docker-compose ps
 matrix:
   include:
   - env: TARGET=x86 DOCKER_IMAGE=msgflo/msgflo-project DOCKER_FILE=Dockerfile
