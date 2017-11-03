@@ -21,7 +21,7 @@
     "fbp-protocol-healthcheck": "^1.0.0",
     "mqtt": "^2.9.0",
     "msgflo": "^0.10.26",
-    "msgflo-nodejs": "^0.10.5"
+    "msgflo-nodejs": "^0.11.0"
   },
   "devDependencies": {
     "chai": "^4.0.2",
