@@ -7,14 +7,14 @@ This repository provides a template for creating and running new [MsgFlo](https:
 
 * Support for JavaScript components
 * Support for CoffeeScript components
-* Support for Python components
+* Support for Python 3 components
 * docker-compose runnable environment
 
 ## Getting started
 
 * Fork this repository and name it to whatever suits your purpose
 * Update the project name and repository details accordingly in `package.json`
-* If you need additional libraries, add them to `package.json` (for Node.js) or `requirements.txt` (for Python)
+* If you need additional libraries, add them to `package.json` (for Node.js) or `requirements.txt` (for Python 3)
 
 You can use this template for development both with a direct installation or with Docker.
 
@@ -22,7 +22,7 @@ You can use this template for development both with a direct installation or wit
 
 * Install and start a [Mosquitto](https://mosquitto.org/) message broker
 * Install the Node.js dependencies of this project with `npm install`
-* Install the Python dependencies of this project with `pip install -r requirements.txt`
+* Install the Python 3 dependencies of this project with `pip3 install -r requirements.txt`
 * Start the MsgFlo broker with `MSGFLO_BROKER=mqtt://localhost npm start`
 
 ### Running with Docker
@@ -49,3 +49,8 @@ Use Flowhub's [GitHub synchronization](https://docs.flowhub.io/github-integratio
 * Enable your local fork in [Travis CI](https://travis-ci.org/)
 * Tests are written in [fbp-spec format](https://github.com/flowbased/fbp-spec) and located in `spec/` folder
 * You can run tests locally with `npm test` (note: you'll have to do `npm install` for this even when running with Docker)
+
+## Changes
+
+* 1.0.0 (git master)
+  - Switched from Python 2 to Python 3
