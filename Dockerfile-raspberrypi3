@@ -10,10 +10,10 @@ ENV NODE_ENV production
 
 RUN mkdir -p /var/app
 WORKDIR /var/app
+COPY . /var/app
 
 # Install MsgFlo and dependencies
-COPY . /var/app
-RUN npm install
+RUN npm install --only=production
 
 # Install msgflo-python
 RUN apt-get update && apt-get install -y \
